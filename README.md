@@ -9,17 +9,21 @@ How to use:
  CameraVideoHelper.sharedInstance.openCamera(self, isVideo: false, showVideoOption: true) { (aImg, videoUrl, selectedType)  in
       //Perform your work accordingly
   }
+  
   2.If you need to capture video
   CameraVideoHelper.sharedInstance.openCamera(self, isVideo: true, showVideoOption: true) { (aImg, videoUrl, selectedType) in
       //Perform your work accordingly
   }
+  
   3. If you need to choose media from photo library
   CameraVideoHelper.sharedInstance.chooseImageFromGallery(viewController: self) { (aImg, videoUrl, selectedType) in
       //Perform your work accordingly
   }
+  
 default:
 CameraVideoHelper.sharedInstance.showCameraVideoActionSheeet(self, showVideo: true) { (aImg, videoUrl, selectedType) in
     //Perform your work accordingly
     }
+    
     
     Happy Coding !!
