@@ -1,5 +1,5 @@
 # CameraVideoHelper
-A Custom Class to select media from camera ,video or photolibrary
+A Custom Class to select media from camera ,video  or photo library .
 
 # Usage
 Just Drag and Drop CameraVideoHelper class into your project and you are done. 😄
