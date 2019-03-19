@@ -21,7 +21,7 @@ How to use:
       //Perform your work accordingly
   }
   
-# default:
+default:
 CameraVideoHelper.sharedInstance.showCameraVideoActionSheeet(self, showVideo: true) { (aImg, videoUrl, selectedType) in
     //Perform your work accordingly
     }
