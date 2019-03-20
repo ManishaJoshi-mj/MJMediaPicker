@@ -15,23 +15,33 @@ import MediaPlayer
 import AVKit
 import AssetsLibrary
 
+
+/// Enum to know  user selected media type
+///
+/// - image: User has selected image
+/// - video: User has selected video
 enum FileType {
   case image
   case video
 }
+
+
 class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
   
   static let sharedInstance = MJMediaPickerHelper()
+  
   //MARK:- Properties
+  
   //Store the object of controller from which the method gets called
   var objVC : UIViewController?
+  
   //Block which will be return at completion
   typealias completionBlock = (UIImage?, URL? ,FileType? ) -> Void
   var block : completionBlock?
   
+  
   // MARK: - Show Action sheet
   // MARK: -
-  
   
   /// This method show action sheet with options to select media type
   ///
@@ -46,13 +56,15 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
     if showVideo == false{
       arrOptions = ["Camera", "Import from library"]
     }
+    
     DispatchQueue.main.async(execute: {
+      
       UIAlertController.showAlertForCameraHelper(controller: controller,style: .actionSheet ,aCancelBtn: "Cancel", aStrMessage: nil, otherButtonArr: arrOptions, completion: { (index, strButtonTitle) in
+        
         if index == 0 {
           // "Capture Photo" selcted
           self.openCamera(controller, isVideo: false , showVideoOption: showVideo, completionBlock: completionHandler)
         }
-          
         else if index == 1 {
           // "Capture Video" selected
           if showVideo == true{
@@ -68,11 +80,12 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
           self.chooseImageFromGallery(viewController :controller, completionBlock: completionHandler )
         }
       })
-      
     } )
+    
     objVC = controller
     block = completionHandler
   }
+  
   
   /// This method gets called when user select camera or video option
   ///
@@ -97,7 +110,6 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
     case .denied:
       //display alert to open setting if camera permission is denied
       alertPromptToAllowCameraAccessViaSettings(controller: VC, strType: "Camera")
-      
     case .authorized:
       presentImagePicker(imagePicker, showVideoOption, isVideo, VC)
     case .restricted:
@@ -106,6 +118,9 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
       if !UIImagePickerController.isSourceTypeAvailable(.camera) {
         //show error
         print("CAMERA_NOT_SUPPORTED")
+        //show alert to allow access photo library
+        UIAlertController.showAlertForCameraHelper(controller: VC, aStrMessage: "Unable to access the Camera,  Camera  not available", otherButtonArr: ["OK"], completion: { (aInt, strMsg) in
+        })
         return
       }
       AVCaptureDevice.requestAccess(for: cameraMediaType) { granted in
@@ -138,7 +153,6 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
   
   //MARK:- Show Alert to Open settings Page
   func alertPromptToAllowCameraAccessViaSettings(controller : UIViewController, strType : String) {
-    
     UIAlertController.showAlertForCameraHelper(controller: controller, style: .alert, aCancelBtn: "Cancel", aStrMessage: " Would Like To Access the \(strType) Please grant permission to use the \(strType).", otherButtonArr: ["Settings"]) { (aInt, aStrMsg) in
       if aInt == 0 {
         if !UIApplication.openSettingsURLString.isEmpty {
@@ -149,6 +163,7 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
   }
   
   //check if user has allowed for photo library permission
+  
   func checkPhotoLibraryPermission(_ VC : UIViewController) {
     
     let status = PHPhotoLibrary.authorizationStatus()
@@ -181,6 +196,7 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
   
   //MARK:- Open video Controller
   //MARK:-
+  
   func playVideo (_ controller : UIViewController , videoUrl : URL)
   {
     let player = AVPlayer(url: videoUrl)
@@ -204,8 +220,10 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
       imagePicker.allowsEditing = true
       imagePicker.isEditing = true
       imagePicker.mediaTypes = showVideoOption ? [kUTTypeMovie as String , kUTTypeImage as String] : [kUTTypeImage as String]
+      
       //Check photo library permission
       self.checkPhotoLibraryPermission(VC)
+      
       if isVideo {
         //set quality of video for compress size
         imagePicker.videoQuality = .type640x480
@@ -220,6 +238,8 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
     } else {
       //show error to user for allowing access from settings
       print("ALLOW_CAMERA_ACCESS_FROM_SETTINGS" , "Denied access to Camera")
+      UIAlertController.showAlertForCameraHelper(controller: VC, aStrMessage: "Please allow camera access from  settings.", otherButtonArr: ["OK"], completion: { (aInt, strMsg) in
+      })
     }
   }
   
@@ -252,6 +272,8 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
     }
   }
 }
+
+
 // MARK: - UIImagePickerControllerDelegate Methods
 extension MJMediaPickerHelper {
   
@@ -357,6 +379,7 @@ extension MJMediaPickerHelper {
     }
     objVC?.dismiss(animated: true, completion: nil)
   }
+  
   
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     block?(nil, nil , .image)
