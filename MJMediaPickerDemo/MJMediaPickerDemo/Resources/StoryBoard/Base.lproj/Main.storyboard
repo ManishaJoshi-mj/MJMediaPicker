@@ -1,24 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g1w-PZ-d4V">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Choose Media-->
+        <scene sceneID="LUJ-qw-Art">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="ChooseMediaVC" id="g1w-PZ-d4V" customClass="ChooseMediaVC" customModule="CameraVideoHelperDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xcn-lf-Mel">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="Htu-G7-xbY">
+                                <rect key="frame" x="50" y="537" width="275" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-lu-GiN">
+                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="camera"/>
+                                        <connections>
+                                            <action selector="btnCameraClicked:" destination="g1w-PZ-d4V" eventType="touchUpInside" id="n8b-pr-kCC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eut-Qx-VKe">
+                                        <rect key="frame" x="115.5" y="0.0" width="44" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="video"/>
+                                        <connections>
+                                            <action selector="btnVideoClicked:" destination="g1w-PZ-d4V" eventType="touchUpInside" id="wvN-zt-j11"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARP-Qs-Shf">
+                                        <rect key="frame" x="231.5" y="0.0" width="43.5" height="40"/>
+                                        <state key="normal" image="gallery"/>
+                                        <connections>
+                                            <action selector="btnGalleryClicked:" destination="g1w-PZ-d4V" eventType="touchUpInside" id="2kp-eB-DES"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vEo-JD-gH2"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqz-hE-Hwp">
+                                <rect key="frame" x="20" y="607" width="335" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qvD-uD-YmY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Choose From ActionSheet">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSelectMediaClicked:" destination="g1w-PZ-d4V" eventType="touchUpInside" id="J55-on-Fem"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-FJ-0gr">
+                                <rect key="frame" x="20" y="84" width="335" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5w1-Yq-1Za">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="300"/>
+                                    </imageView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wd-5a-FKU">
+                                        <rect key="frame" x="152.5" y="135" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.070588235289999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="5qK-CE-vWU"/>
+                                            <constraint firstAttribute="height" constant="30" id="a5Z-E3-GJz"/>
+                                        </constraints>
+                                        <state key="normal" image="video1"/>
+                                        <connections>
+                                            <action selector="btnPlayVideoClicked:" destination="g1w-PZ-d4V" eventType="touchUpInside" id="RLy-an-QU1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="A5F-Fa-Bwx"/>
+                                    <constraint firstItem="5w1-Yq-1Za" firstAttribute="top" secondItem="p5t-FJ-0gr" secondAttribute="top" id="Vx4-0E-ajd"/>
+                                    <constraint firstAttribute="bottom" secondItem="5w1-Yq-1Za" secondAttribute="bottom" id="W1a-lk-zAX"/>
+                                    <constraint firstItem="8Wd-5a-FKU" firstAttribute="centerX" secondItem="p5t-FJ-0gr" secondAttribute="centerX" id="dP8-qU-rzd"/>
+                                    <constraint firstItem="8Wd-5a-FKU" firstAttribute="centerY" secondItem="p5t-FJ-0gr" secondAttribute="centerY" id="lQ2-Ks-Sy3"/>
+                                    <constraint firstAttribute="trailing" secondItem="5w1-Yq-1Za" secondAttribute="trailing" id="lSy-QV-drT"/>
+                                    <constraint firstItem="5w1-Yq-1Za" firstAttribute="leading" secondItem="p5t-FJ-0gr" secondAttribute="leading" id="rdG-Mu-kC8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="wqz-hE-Hwp" firstAttribute="top" secondItem="Htu-G7-xbY" secondAttribute="bottom" constant="30" id="G0L-cQ-MUf"/>
+                            <constraint firstItem="Htu-G7-xbY" firstAttribute="leading" secondItem="24G-4U-CeC" secondAttribute="leading" constant="50" id="V9c-G5-VcD"/>
+                            <constraint firstItem="wqz-hE-Hwp" firstAttribute="leading" secondItem="24G-4U-CeC" secondAttribute="leading" constant="20" id="f6Z-tH-dGG"/>
+                            <constraint firstItem="24G-4U-CeC" firstAttribute="trailing" secondItem="Htu-G7-xbY" secondAttribute="trailing" constant="50" id="hdy-63-oOC"/>
+                            <constraint firstItem="24G-4U-CeC" firstAttribute="trailing" secondItem="wqz-hE-Hwp" secondAttribute="trailing" constant="20" id="lMv-hQ-4sg"/>
+                            <constraint firstItem="24G-4U-CeC" firstAttribute="bottom" secondItem="wqz-hE-Hwp" secondAttribute="bottom" constant="20" id="uBr-I4-hx0"/>
+                            <constraint firstItem="24G-4U-CeC" firstAttribute="trailing" secondItem="p5t-FJ-0gr" secondAttribute="trailing" constant="20" id="wDE-7X-N4a"/>
+                            <constraint firstItem="p5t-FJ-0gr" firstAttribute="top" secondItem="24G-4U-CeC" secondAttribute="top" constant="20" id="wei-Di-pKc"/>
+                            <constraint firstItem="p5t-FJ-0gr" firstAttribute="leading" secondItem="24G-4U-CeC" secondAttribute="leading" constant="20" id="xvM-iL-XJP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="24G-4U-CeC"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Choose Media" id="cyq-gh-6hQ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnPlayVideo" destination="8Wd-5a-FKU" id="yOd-AJ-GY8"/>
+                        <outlet property="imgMediaView" destination="5w1-Yq-1Za" id="YqA-uP-NRI"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ft-oH-Px5" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="26.399999999999999" y="39.130434782608695"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="256" height="256"/>
+        <image name="gallery" width="128" height="128"/>
+        <image name="video" width="128" height="128"/>
+        <image name="video1" width="256" height="256"/>
+    </resources>
 </document>

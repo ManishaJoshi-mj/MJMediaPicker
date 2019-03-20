@@ -1,20 +1,20 @@
 # MJMediaHelper
-A Custom Image PickerClass to select media from camera ,video  or photo library .
+A Custom Class to select media from camera ,video  or photo library .
 
 # Usage
-Just Drag and Drop MJMediaHelper class into your project and you are done.You can download and run the demo app for refrence.
+Just Drag and Drop MJMediaPickerHelper class into your project and you are done.You can download and run the demo app for refrence.
 
 How to use:
 
 1.  If you need to capture image from Camera 
  ```bash
- MJMediaHelper.sharedInstance.openCamera(self, isVideo: false, showVideoOption: true) { (aImg, videoUrl, selectedType)  in
+ MJMediaPickerHelper.sharedInstance.openCamera(self, isVideo: false, showVideoOption: true) { (aImg, videoUrl, selectedType)  in
       //Perform your work accordingly
  } 
  ```
 2. If you need to capture video
   ```bash
-  MJMediaHelper.sharedInstance.openCamera(self, isVideo: true, showVideoOption: true) { (aImg, videoUrl, selectedType) in
+  MJMediaPickerHelper.sharedInstance.openCamera(self, isVideo: true, showVideoOption: true) { (aImg, videoUrl, selectedType) in
       //Perform your work accordingly
   }
   ```
@@ -26,7 +26,7 @@ How to use:
   ```
 default:
 ```bash
-MJMediaHelper.sharedInstance.showCameraVideoActionSheeet(self, showVideo: true) { (aImg, videoUrl, selectedType) in
+MJMediaPickerHelper.sharedInstance.showCameraVideoActionSheeet(self, showVideo: true) { (aImg, videoUrl, selectedType) in
     //Perform your work accordingly
     }
  ```
