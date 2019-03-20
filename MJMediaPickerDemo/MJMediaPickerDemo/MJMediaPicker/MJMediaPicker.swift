@@ -1,6 +1,6 @@
 //
-//  CameraVideoHelper.swift
-//  CameraVideoHelperDemo
+//  MJPicker.swift
+//  MJPickerDemo
 //
 //  Created by Manisha Joshi on 19/03/19.
 //  Copyright © 2019 Manisha. All rights reserved.
