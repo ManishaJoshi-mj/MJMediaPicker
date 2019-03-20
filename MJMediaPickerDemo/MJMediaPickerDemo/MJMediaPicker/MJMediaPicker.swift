@@ -26,17 +26,10 @@ enum FileType {
 }
 
 
-<<<<<<< HEAD:MJMediaPickerDemo/MJMediaPickerDemo/MJMediaPicker/MJMediaPicker.swift
 class MJMediaPicker: NSObject, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
   
   static let sharedInstance = MJMediaPicker()
   
-=======
-class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
-  
-  static let sharedInstance = MJMediaPickerHelper()
-  
->>>>>>> a973261abd1c62e6852a3fada7a95c3f0d78a074:MJMediaPickerDemo/MJMediaPickerDemo/CustomCode/MJMediaPickerHelper.swift
   //MARK:- Properties
   
   //Store the object of controller from which the method gets called
