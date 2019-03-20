@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		BA4C99B02241F0B9009B11F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C99AF2241F0B9009B11F3 /* AppDelegate.swift */; };
-		BA4C99B52241F0B9009B11F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4C99B32241F0B9009B11F3 /* Main.storyboard */; };
 		BA4C99B72241F0BA009B11F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4C99B62241F0BA009B11F3 /* Assets.xcassets */; };
-		BA4C99BA2241F0BA009B11F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4C99B82241F0BA009B11F3 /* LaunchScreen.storyboard */; };
 		BA4C99CA2241F16C009B11F3 /* ChooseMediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C99C92241F16C009B11F3 /* ChooseMediaVC.swift */; };
-		BA4C99CD2241F178009B11F3 /* MJMediaPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C99CC2241F178009B11F3 /* MJMediaPickerHelper.swift */; };
+		BA4C99D32242043D009B11F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4C99CF2242043D009B11F3 /* LaunchScreen.storyboard */; };
+		BA4C99D42242043D009B11F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4C99D12242043D009B11F3 /* Main.storyboard */; };
+		BA4C99D722420447009B11F3 /* MJMediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C99D622420447009B11F3 /* MJMediaPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BA4C99AC2241F0B9009B11F3 /* MJMediaPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJMediaPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4C99AF2241F0B9009B11F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA4C99B42241F0B9009B11F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA4C99B62241F0BA009B11F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA4C99B92241F0BA009B11F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA4C99BB2241F0BA009B11F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4C99C92241F16C009B11F3 /* ChooseMediaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMediaVC.swift; sourceTree = "<group>"; };
-		BA4C99CC2241F178009B11F3 /* MJMediaPickerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJMediaPickerHelper.swift; sourceTree = "<group>"; };
+		BA4C99D02242043D009B11F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA4C99D22242043D009B11F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA4C99D622420447009B11F3 /* MJMediaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJMediaPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				BA4C99C12241F0D1009B11F3 /* AppDelegate */,
-				BA4C99CB2241F178009B11F3 /* CustomCode */,
 				BA4C99C72241F16C009B11F3 /* Controller */,
+				BA4C99D522420447009B11F3 /* MJMediaPicker */,
+				BA4C99CE2242043D009B11F3 /* StoryBoard */,
 				BA4C99C62241F10C009B11F3 /* Resources */,
 			);
 			path = MJMediaPickerDemo;
@@ -70,15 +71,6 @@
 				BA4C99AF2241F0B9009B11F3 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		BA4C99C22241F0E3009B11F3 /* StoryBoard */ = {
-			isa = PBXGroup;
-			children = (
-				BA4C99B32241F0B9009B11F3 /* Main.storyboard */,
-				BA4C99B82241F0BA009B11F3 /* LaunchScreen.storyboard */,
-			);
-			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		BA4C99C42241F0F9009B11F3 /* Images */ = {
@@ -100,7 +92,6 @@
 		BA4C99C62241F10C009B11F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BA4C99C22241F0E3009B11F3 /* StoryBoard */,
 				BA4C99C42241F0F9009B11F3 /* Images */,
 				BA4C99C52241F100009B11F3 /* PropertyList */,
 			);
@@ -123,12 +114,21 @@
 			path = ChooseMediaVC;
 			sourceTree = "<group>";
 		};
-		BA4C99CB2241F178009B11F3 /* CustomCode */ = {
+		BA4C99CE2242043D009B11F3 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				BA4C99CC2241F178009B11F3 /* MJMediaPickerHelper.swift */,
+				BA4C99CF2242043D009B11F3 /* LaunchScreen.storyboard */,
+				BA4C99D12242043D009B11F3 /* Main.storyboard */,
 			);
-			path = CustomCode;
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		BA4C99D522420447009B11F3 /* MJMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				BA4C99D622420447009B11F3 /* MJMediaPicker.swift */,
+			);
+			path = MJMediaPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,9 +189,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4C99BA2241F0BA009B11F3 /* LaunchScreen.storyboard in Resources */,
+				BA4C99D42242043D009B11F3 /* Main.storyboard in Resources */,
 				BA4C99B72241F0BA009B11F3 /* Assets.xcassets in Resources */,
-				BA4C99B52241F0B9009B11F3 /* Main.storyboard in Resources */,
+				BA4C99D32242043D009B11F3 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,27 +204,27 @@
 			files = (
 				BA4C99CA2241F16C009B11F3 /* ChooseMediaVC.swift in Sources */,
 				BA4C99B02241F0B9009B11F3 /* AppDelegate.swift in Sources */,
-				BA4C99CD2241F178009B11F3 /* MJMediaPickerHelper.swift in Sources */,
+				BA4C99D722420447009B11F3 /* MJMediaPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BA4C99B32241F0B9009B11F3 /* Main.storyboard */ = {
+		BA4C99CF2242043D009B11F3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BA4C99B42241F0B9009B11F3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BA4C99B82241F0BA009B11F3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA4C99B92241F0BA009B11F3 /* Base */,
+				BA4C99D02242043D009B11F3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BA4C99D12242043D009B11F3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA4C99D22242043D009B11F3 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

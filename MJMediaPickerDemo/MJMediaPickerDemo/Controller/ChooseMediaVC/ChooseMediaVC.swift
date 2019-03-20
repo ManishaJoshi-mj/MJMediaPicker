@@ -33,7 +33,7 @@ extension ChooseMediaVC {
   /// - Parameter sender: object of button gallery
   @IBAction func btnGalleryClicked(_ sender: UIButton) {
     
-    MJMediaPickerHelper.sharedInstance.chooseImageFromGallery(viewController: self) { (aImg, videoUrl, selectedType) in
+    MJMediaPicker.sharedInstance.chooseImageFromGallery(viewController: self) { (aImg, videoUrl, selectedType) in
       self.congiureaImageViewWithImage(img: aImg, videoUrl: videoUrl, selectedMediaType: selectedType)
     }
   }
@@ -41,7 +41,7 @@ extension ChooseMediaVC {
   ///
   /// - Parameter sender: object of button video
   @IBAction func btnVideoClicked(_ sender: UIButton) {
-    MJMediaPickerHelper.sharedInstance.openCamera(self, isVideo: true, showVideoOption: true){ (aImg, videoUrl, selectedType) in
+    MJMediaPicker.sharedInstance.openCamera(self, isVideo: true, showVideoOption: true){ (aImg, videoUrl, selectedType) in
       self.congiureaImageViewWithImage(img: aImg, videoUrl: videoUrl, selectedMediaType: selectedType)
     }
   }
@@ -49,7 +49,7 @@ extension ChooseMediaVC {
   ///
   /// - Parameter sender: object of button camera
   @IBAction func btnCameraClicked(_ sender: UIButton) {
-    MJMediaPickerHelper.sharedInstance.openCamera(self, isVideo: false, showVideoOption: true) { (aImg, videoUrl, selectedType) in
+    MJMediaPicker.sharedInstance.openCamera(self, isVideo: false, showVideoOption: true) { (aImg, videoUrl, selectedType) in
       self.congiureaImageViewWithImage(img: aImg, videoUrl: videoUrl, selectedMediaType: selectedType)
     }
   }
@@ -57,7 +57,7 @@ extension ChooseMediaVC {
   ///
   /// - Parameter sender: object of button
   @IBAction func btnSelectMediaClicked(_ sender: UIButton) {
-    MJMediaPickerHelper.sharedInstance.showCameraVideoActionSheeet(self, showVideo: true) { (aImg, videoUrl, selectedType) in
+    MJMediaPicker.sharedInstance.showCameraVideoActionSheeet(self, showVideo: true) { (aImg, videoUrl, selectedType) in
       self.congiureaImageViewWithImage(img: aImg, videoUrl: videoUrl, selectedMediaType: selectedType)
     }
   }
@@ -66,7 +66,7 @@ extension ChooseMediaVC {
   /// - Parameter sender: object of button play
   @IBAction func btnPlayVideoClicked(_ sender: UIButton) {
     if let videoUrl = selectedVideoUrl {
-      MJMediaPickerHelper.sharedInstance.playVideo(self, videoUrl: videoUrl)
+      MJMediaPicker.sharedInstance.playVideo(self, videoUrl: videoUrl)
     }
   }
 }

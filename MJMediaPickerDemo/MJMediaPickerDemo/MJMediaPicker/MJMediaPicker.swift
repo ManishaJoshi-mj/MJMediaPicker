@@ -26,9 +26,9 @@ enum FileType {
 }
 
 
-class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class MJMediaPicker: NSObject, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
   
-  static let sharedInstance = MJMediaPickerHelper()
+  static let sharedInstance = MJMediaPicker()
   
   //MARK:- Properties
   
@@ -275,7 +275,7 @@ class MJMediaPickerHelper: NSObject, UIImagePickerControllerDelegate , UINavigat
 
 
 // MARK: - UIImagePickerControllerDelegate Methods
-extension MJMediaPickerHelper {
+extension MJMediaPicker {
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     
