@@ -12,7 +12,7 @@ How to use:
       //Perform your work accordingly
  } 
  ```
-2.If you need to capture video
+2. If you need to capture video
   ```bash
   CameraVideoHelper.sharedInstance.openCamera(self, isVideo: true, showVideoOption: true) { (aImg, videoUrl, selectedType) in
       //Perform your work accordingly
